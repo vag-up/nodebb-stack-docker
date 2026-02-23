@@ -1,0 +1,12 @@
+{
+    "pagination": "ページ設定",
+    "enable": "スクロールでのページ自動ロードはしない",
+    "posts": "投稿のページネーション",
+    "topics": "スレッドページ",
+    "posts-per-page": "ページごとの投稿数",
+    "max-posts-per-page": "1ページあたりの最大投稿数",
+    "categories": "カテゴリ",
+    "topics-per-page": "ページごとのスレッド数",
+    "max-topics-per-page": "1ページあたりの最大スレッド数",
+    "categories-per-page": "1ページあたりのカテゴリ数"
+}

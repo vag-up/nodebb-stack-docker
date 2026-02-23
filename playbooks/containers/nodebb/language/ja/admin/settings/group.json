@@ -1,0 +1,13 @@
+{
+    "general": "一般",
+    "private-groups": "プライベートグループ",
+    "private-groups.help": "有効の場合、グループへの参加はグループ管理人からの承認が必要です。<em>(デフォルト: 有効)</em>",
+    "private-groups.warning": "<strong>注意!</strong>このオプションが無効で、プライベートグループがある場合、自動的に公開されます。",
+    "allow-multiple-badges": "複数バッジを許可",
+    "allow-multiple-badges-help": "このフラグは、ユーザーが複数のグループバッジを選択できるようにするために使用でき、テーマのサポートが必要です。",
+    "max-name-length": "グループ名の最大文字数",
+    "max-title-length": "グループタイトルの最大文字数",
+    "cover-image": "グループ表紙イメージ",
+    "default-cover": "デフォルトのカバー画像",
+    "default-cover-help": "アップロードされたカバー画像を持たないグループのカンマ区切りのデフォルト表紙画像を追加する"
+}

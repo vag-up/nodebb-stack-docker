@@ -1,0 +1,12 @@
+{
+    "logger": "ロガー",
+    "logger-settings": "ロガー設定",
+    "description": "説明",
+    "explanation": "ドロップダウンメニューからウィジェットを選択し、左のテンプレートのウィジェットエリアにドラッグ&ドロップします。",
+    "enable-http": "HTTPロギングを有効にする",
+    "enable-socket": "socket.ioイベントのロギングを有効にする",
+    "file-path": "ログファイルのパス",
+    "file-path-placeholder": "/path/to/log/file.log ::: 空白の状態でターミナルにログを表示する",
+    "control-panel": "ロガーのコントロールパネル",
+    "update-settings": "ロガー設定を更新する"
+}

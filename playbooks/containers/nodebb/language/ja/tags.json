@@ -1,0 +1,17 @@
+{
+    "all-tags": "すべてのタグ",
+    "no-tag-topics": "このタグに関連するスレッドはありません。",
+    "no-tags-found": "タグが見つかりません",
+    "tags": "タグ",
+    "enter-tags-here": "タグを入力、%1〜%2文字。",
+    "enter-tags-here-short": "タグを入れます…",
+    "no-tags": "タグがありません",
+    "select-tags": "タグを選択",
+    "tag-whitelist": "タグホワイトリスト",
+    "watching": "ウォッチ中",
+    "not-watching": "ウォッチしていない",
+    "watching.description": "新しいスレッドの通知を受け取る。<br/>未読と最近にスレッドを表示",
+    "not-watching.description": "未読には表示しない、最近に表示",
+    "following-tag.message": "このタグでスレッドが投稿されると通知を受け取ります。",
+    "not-following-tag.message": "このタグでスレッドが投稿されても通知を受け取りません。"
+}

@@ -1,0 +1,17 @@
+{
+    "zero-is-disabled": "この制限を無効にするには0を入力",
+    "chat-settings": "チャット設定",
+    "disable": "チャットは無効です",
+    "disable-editing": "チャットメッセージの編集/削除を無効にする",
+    "disable-editing-help": "管理者およびグローバルモデレーターはこの制限を免除されます",
+    "max-length": "チャットメッセージの最大の長さ",
+    "max-length-remote": "リモートチャットメッセージの最大長",
+    "max-length-remote-help": "リモートメッセージは通常長いため（@メンションなど）、この値はローカルユーザー用のチャットメッセージ最大値より高く設定されることが多いです。",
+    "max-chat-room-name-length": "チャットルーム名の最大長",
+    "max-room-size": "チャットルームの最大ユーザー数",
+    "delay": "チャットメッセージ間の時間（ミリ秒）",
+    "notification-delay": "チャットメッセージの通知遅延",
+    "notification-delay-help": "この時間内に送信された追加メッセージはまとめられ、ユーザーは遅延期間ごとに1回通知されます。遅延を無効にするには0に設定してください。",
+    "restrictions.seconds-edit-after": "投稿が編集可能な秒数（0で無効）",
+    "restrictions.seconds-delete-after": "投稿が削除可能な秒数（0で無効）"
+}

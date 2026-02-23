@@ -1,0 +1,47 @@
+- hosts: all
+  become: true
+  vars_files:
+    - vars/main.yml
+
+  vars:
+    default_domain_name: 'example.com'
+
+  roles:
+    # Docker environment
+    - geerlingguy.docker
+
+  tasks:
+    - name: Install minimal command
+      package:
+        name:
+          - zip
+          - unzip
+          - inotify-tools
+          - mailutils # for email test
+
+    - name: Create Japanese environment
+      import_tasks: ./tasks/japanese.yml
+
+    #
+    # Create Docker container network
+    #
+    - name: Create a network
+      docker_network:
+        name: local-network
+
+    - name: Create Docker container(redis)
+      import_tasks: ./tasks/redis.yml
+
+    - name: Create Docker container(mongodb)
+      import_tasks: ./tasks/mongodb.yml
+
+    - name: Create Docker container(nginx)
+      import_tasks: ./tasks/nginx.yml
+
+    - name: Create Docker container(nodebb)
+      import_tasks: ./tasks/nodebb.yml
+
+    - name: Restart nginx container to apply all changes
+      docker_container:
+        name: "{{ docker_container_nginx }}"
+        restart: yes

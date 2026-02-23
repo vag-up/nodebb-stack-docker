@@ -1,0 +1,63 @@
+#
+# MongoDB データディレクトリと初期化スクリプト
+#
+- name: Create MongoDB data directory
+  file: path='{{ docker_host_config_root }}/mongodb/data' state=directory owner=root group=root mode=0755
+
+- name: Create MongoDB init script directory
+  file: path='{{ docker_host_config_root }}/mongodb/init.d' state=directory owner=root group=root mode=0755
+
+- name: Install MongoDB init script
+  template:
+    src: './containers/mongodb/templates/init.js.j2'
+    dest: '{{ docker_host_config_root }}/mongodb/init.d/init.js'
+    owner: root
+    group: root
+    mode: '0644'
+
+#
+# MongoDBコンテナ作成
+#
+- name: Create build directory
+  file:
+    path: '{{ docker_host_config_root }}/containers/mongodb/build'
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create Dockerfile
+  template:
+    src: './containers/mongodb/templates/Dockerfile.j2'
+    dest: '{{ docker_host_config_root }}/containers/mongodb/build/Dockerfile'
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Build MongoDB image and push
+  docker_image:
+    name: local/mongodb
+    build:
+      path: '{{ docker_host_config_root }}/containers/mongodb/build'
+    source: build
+    force_source: yes
+
+- name: Create MongoDB container
+  docker_container:
+    name: mongodb
+    image: local/mongodb
+    recreate: yes
+    state: started
+    restart_policy: always
+    networks:
+      - name: local-network
+    env:
+      MONGO_INITDB_ROOT_USERNAME: '{{ database_root_user }}'
+      MONGO_INITDB_ROOT_PASSWORD: '{{ db_root_password }}'
+      MONGO_INITDB_DATABASE: '{{ main_db_name }}'
+    log_driver: journald
+    log_options:
+      tag: "{{ '{{' }}.ImageName{{ '}}' }}/{{ '{{' }}.Name{{ '}}' }}/{{ '{{' }}.ID{{ '}}' }}"
+    volumes:
+      - '{{ docker_host_config_root }}/mongodb/data:/data/db'
+      - '{{ docker_host_config_root }}/mongodb/init.d/init.js:/docker-entrypoint-initdb.d/init.js:ro'

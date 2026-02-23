@@ -1,0 +1,34 @@
+#
+# Docker container name
+#
+docker_container_nodebb: nodebb
+docker_container_db: mongodb
+docker_container_redis: redis
+docker_container_nginx: nginx
+docker_container_certbot: certbot
+
+#
+# Docker container configuration
+#
+docker_container_timezone: Asia/Tokyo
+docker_host_config_root: /docker
+
+#
+# Docker application configuration
+#
+www_document_root: '{{ docker_host_config_root }}/public_html' # WWWドキュメントルート
+
+#
+# DB configuration (NodeBB)
+#
+database_root_user: root
+db_root_password: root_password
+main_db_name: nodebb
+main_db_user: nodebb
+main_db_password: nodebb_password
+
+#
+# NodeBB configuration
+#
+nodebb_url: "https://192.168.33.10"
+nodebb_secret: "change-this-secret-in-production"

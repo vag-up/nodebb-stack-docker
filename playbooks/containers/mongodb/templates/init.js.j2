@@ -1,0 +1,9 @@
+db = db.getSiblingDB('{{ main_db_name }}')
+db.createUser({
+  user: '{{ main_db_user }}',
+  pwd: '{{ main_db_password }}',
+  roles: [
+    { role: 'readWrite', db: '{{ main_db_name }}' },
+    { role: 'clusterMonitor', db: 'admin' }
+  ],
+})

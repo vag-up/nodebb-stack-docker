@@ -1,0 +1,18 @@
+{
+  "url": "{{ nodebb_url }}",
+  "secret": "{{ nodebb_secret }}",
+  "defaults": {
+    "mongo": {
+      "host": "{{ docker_container_db }}",
+      "port": 27017,
+      "database": "{{ main_db_name }}",
+      "username": "{{ main_db_user }}",
+      "password": "{{ main_db_password }}"
+    },
+    "redis": {
+      "host": "{{ docker_container_redis }}",
+      "port": 6379,
+      "database": 0
+    }
+  }
+}

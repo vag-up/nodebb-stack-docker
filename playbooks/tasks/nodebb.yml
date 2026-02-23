@@ -1,0 +1,81 @@
+---
+#
+# NodeBB ボリュームディレクトリと setup.json
+# 公式イメージは nodebb ユーザー (UID 1001, GID 1001) で動作するため、
+# マウント先ディレクトリの所有者を 1001:1001 に設定する
+#
+- name: Create NodeBB volume directories
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: '1001'
+    group: '1001'
+    mode: '0755'
+  loop:
+    - '{{ docker_host_config_root }}/nodebb/build'
+    - '{{ docker_host_config_root }}/nodebb/uploads'
+    - '{{ docker_host_config_root }}/nodebb/config'
+    - '{{ docker_host_config_root }}/nodebb/install-data'
+    - '{{ docker_host_config_root }}/nodebb/language'
+
+- name: Copy Japanese install data files
+  copy:
+    src: '{{ playbook_dir }}/containers/nodebb/install-data/{{ item }}'
+    dest: '{{ docker_host_config_root }}/nodebb/install-data/{{ item }}'
+    mode: '0644'
+  loop:
+    - categories.json
+    - welcome.md
+    - footer.json
+
+# language/ja を直接コピー（language 全体だと copy の挙動で language/language/ja になるため）
+- name: Copy Japanese language resources
+  copy:
+    src: '{{ playbook_dir }}/containers/nodebb/language/ja'
+    dest: '{{ docker_host_config_root }}/nodebb/language/'
+    mode: '0644'
+    directory_mode: '0755'
+
+- name: Create NodeBB setup.json
+  template:
+    src: './containers/nodebb/templates/setup.json.j2'
+    dest: '{{ docker_host_config_root }}/nodebb/setup.json'
+    owner: root
+    group: root
+    mode: '0644'
+
+#
+# NodeBB イメージの取得（docker pull でタイムアウトを回避。
+# イメージが大きいため、docker_container の API タイムアウトを避ける）
+#
+- name: Pull NodeBB image
+  command: docker pull ghcr.io/nodebb/nodebb:latest
+
+#
+# NodeBB コンテナ作成（公式イメージ使用）
+#
+- name: Create NodeBB container
+  docker_container:
+    name: "{{ docker_container_nodebb }}"
+    image: ghcr.io/nodebb/nodebb:latest
+    recreate: yes
+    state: started
+    restart_policy: always
+    timeout: 600
+    networks:
+      - name: local-network
+    log_driver: journald
+    log_options:
+      tag: "{{ '{{' }}.ImageName{{ '}}' }}/{{ '{{' }}.Name{{ '}}' }}/{{ '{{' }}.ID{{ '}}' }}"
+    volumes:
+      - '{{ docker_host_config_root }}/nodebb/build:/usr/src/app/build'
+      - '{{ docker_host_config_root }}/nodebb/uploads:/usr/src/app/public/uploads'
+      - '{{ docker_host_config_root }}/nodebb/config:/opt/config'
+      - '{{ docker_host_config_root }}/nodebb/setup.json:/usr/src/app/setup.json:ro'
+      # 日本語初期データ: 初回セットアップ時にカテゴリ・ウェルカム投稿・フッターを日本語で作成
+      - '{{ docker_host_config_root }}/nodebb/install-data/categories.json:/usr/src/app/install/data/categories.json:ro'
+      - '{{ docker_host_config_root }}/nodebb/install-data/welcome.md:/usr/src/app/install/data/welcome.md:ro'
+      - '{{ docker_host_config_root }}/nodebb/install-data/footer.json:/usr/src/app/install/data/footer.json:ro'
+      # 日本語リソース: ホストにコピーした language/ja を public/language/ja にマウント
+      # NodeBB ビルド時に読み込まれ build/public/language/ja に出力される
+      - '{{ docker_host_config_root }}/nodebb/language/ja:/usr/src/app/public/language/ja:ro'

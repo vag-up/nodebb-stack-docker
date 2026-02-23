@@ -1,0 +1,12 @@
+{
+    "manage-uploads": "アップロードを管理",
+    "upload-file": "ファイルをアップロード",
+    "filename": "ファイル名",
+    "usage": "投稿での使用",
+    "orphaned": "孤立",
+    "size/filecount": "Size / Filecount",
+    "confirm-delete": "このファイルを本当に削除しますか？",
+    "filecount": "%1 files",
+    "new-folder": "新しいフォルダ",
+    "name-new-folder": "新しいフォルダの名前を入力"
+}

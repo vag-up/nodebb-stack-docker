@@ -1,0 +1,70 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name {{ default_domain_name }};
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/letsencrypt;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    #server_name _;
+    server_name {{ default_domain_name }};
+    root /var/www/html;
+
+    #
+    # SSL configuration
+    #
+    ssl_certificate /etc/letsencrypt/live/{{ default_domain_name }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ default_domain_name }}/privkey.pem;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    #
+    # Maintenance page when NodeBB is not available
+    #
+    error_page 502 503 504 /maintenance.html;
+    location = /maintenance.html {
+        root /var/www/html;
+        internal;
+    }
+
+    #
+    # Reverse proxy to NodeBB (Socket.IO support)
+    #
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://{{ docker_container_nodebb }}:4567;
+        proxy_redirect off;
+
+        # Socket.IO support
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_cache_bypass $http_upgrade;
+
+        # Timeout settings (Socket.IO long-polling)
+        proxy_connect_timeout 5s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+    }
+}

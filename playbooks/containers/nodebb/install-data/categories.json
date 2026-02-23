@@ -1,0 +1,6 @@
+[
+  {"name":"お知らせ","description":"コミュニティに関するお知らせ","descriptionParsed":"<p>コミュニティに関するお知らせ</p>\n","bgColor":"#fda34b","color":"#ffffff","icon":"fa-bullhorn","order":1},
+  {"name":"一般討論","description":"自由に話し合える場所","descriptionParsed":"<p>自由に話し合える場所</p>\n","bgColor":"#59b3d0","color":"#ffffff","icon":"fa-comments-o","order":2},
+  {"name":"ブログ","description":"メンバーによるブログ投稿","descriptionParsed":"<p>メンバーによるブログ投稿</p>\n","bgColor":"#86ba4b","color":"#ffffff","icon":"fa-newspaper-o","order":4},
+  {"name":"コメント・フィードバック","description":"質問があればお気軽にどうぞ！","descriptionParsed":"<p>質問があればお気軽にどうぞ！</p>\n","bgColor":"#e95c5a","color":"#ffffff","icon":"fa-question","order":3}
+]

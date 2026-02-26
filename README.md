@@ -159,7 +159,7 @@ HTTPポート（80）へのアクセスは自動的にHTTPS（443）にリダイ
 
 ### 日本語初期データ
 
-初回セットアップ時に、カテゴリ（お知らせ、一般討論、ブログ、コメント・フィードバック）やウェルカム投稿を日本語で作成するように設定されています。設定ファイルは `playbooks/containers/nodebb/install-data/` にあり、ボリュームマウントでコンテナ内の `install/data/` を上書きしています。日本語UIリソースは `playbooks/containers/nodebb/language/ja/` にあり、プロビジョニング時に `/docker/nodebb/language` へコピーしてからボリュームマウントされます。
+初回セットアップ時に、カテゴリ（お知らせ、フリートーク、ブログ、コメント・フィードバック）やウェルカム投稿を日本語で作成するように設定されています。設定ファイルは `playbooks/containers/nodebb/install-data/` にあり、ボリュームマウントでコンテナ内の `install/data/` を上書きしています。日本語UIリソースは `playbooks/containers/nodebb/language/ja/` にあり、プロビジョニング時に `/docker/nodebb/language` へコピーしてからボリュームマウントされます。
 
 **注意**: この設定は**初回セットアップ時のみ**有効です。既にNodeBBをセットアップ済みの場合は反映されません。日本語の初期データでやり直すには、`/docker/nodebb/config/config.json` を削除し、MongoDBの `nodebb` データベースを削除してから再セットアップしてください。
 

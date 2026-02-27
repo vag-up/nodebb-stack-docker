@@ -30,5 +30,5 @@ main_db_password: nodebb_password
 #
 # NodeBB configuration
 #
-nodebb_url: "https://192.168.33.10"
+nodebb_url: "https://{{ (ansible_all_ipv4_addresses | select('match', '^192\\.168\\.') | first) | default(ansible_default_ipv4.address) }}"
 nodebb_secret: "change-this-secret-in-production"

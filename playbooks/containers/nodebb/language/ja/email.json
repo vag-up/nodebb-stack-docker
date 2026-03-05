@@ -2,7 +2,7 @@
     "test-email.subject": "テストメール",
     "password-reset-requested": "パスワードリセットのリクエスト",
     "welcome-to": "%1へようこそ！",
-    "invite": "メールで招待",
+    "invite": "%1からの招待です",
     "greeting-no-name": "こんにちは",
     "greeting-with-name": "%1さん、こんにちは",
     "email.verify-your-email.subject": "メールアドレスの確認をお願いします",

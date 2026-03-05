@@ -1,0 +1,16 @@
+{
+    "title": "カスタム理由の管理",
+    "create-reason": "理由を作成",
+    "edit-reason": "理由を編集",
+    "reasons-help": "理由は、ユーザーのBANやミュート、または投稿キューでの投稿拒否時に使用される事前定義された説明です。",
+    "reason-title": "タイトル",
+    "reason-type": "タイプ",
+    "reason-body": "本文",
+    "reason-all": "すべて",
+    "reason-ban": "BAN",
+    "reason-mute": "ミュート",
+    "reason-post-queue": "投稿キュー",
+    "reason-type-help": "この理由が適用されるアクションのタイプです。「すべて」を選択した場合、この理由はすべてのアクションタイプで使用できます。",
+    "custom-reasons-saved": "カスタム理由を正常に保存しました",
+    "delete-reason-confirm-x": "タイトルが <strong>%1</strong> のカスタム理由を削除してもよろしいですか？"
+}

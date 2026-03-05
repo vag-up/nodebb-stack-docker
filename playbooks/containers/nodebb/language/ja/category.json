@@ -2,7 +2,7 @@
     "category": "カテゴリ",
     "subcategories": "サブカテゴリ",
     "uncategorized": "未分類",
-    "uncategorized.description": "既存のカテゴリに厳密に当てはまらないトピック",
+    "uncategorized.description": "このフォーラム外からのトピック。ここに表示される見解や意見は、このフォーラムおよびそのメンバーの見解を反映しない場合があります。",
     "handle.description": "このカテゴリはオープンソーシャルウェブからハンドル %1 でフォローできます",
     "new-topic-button": "新規スレッド",
     "guest-login-post": "投稿するにはログインしてください",

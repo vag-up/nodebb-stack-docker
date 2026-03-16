@@ -8,7 +8,7 @@
     "export-error-log": "エラーログのエクスポート (CSV)",
     "clear-error-log": "エラーログの消去",
     "route": "ルート",
-    "count": "このNodeBBは現在<strong>%1</strong>台のサーバーを認識しています",
+    "count": "カウント",
     "no-routes-not-found": "ストップ！404エラーはありません！",
     "clear404-confirm": "本当に404エラーログを消去してもよろしいですか？",
     "clear404-success": "\"404 Not Found\"エラーは消去されました"

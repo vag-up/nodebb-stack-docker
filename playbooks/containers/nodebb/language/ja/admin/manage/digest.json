@@ -5,7 +5,7 @@
     "user": "ユーザー",
     "subscription": "購読タイプ",
     "last-delivery": "最後の配信成功",
-    "default": "デフォルト（%1）",
+    "default": "システムデフォルト",
     "default-help": "<em>システムデフォルト</em>は、ユーザーがダイジェストのグローバルフォーラム設定を明示的に上書きしていないことを意味し、現在は「<strong>%1</strong>」です",
     "resend": "ダイジェストを再送信",
     "resend-all-confirm": "このダイジェストを手動で実行してもよろしいですか？",

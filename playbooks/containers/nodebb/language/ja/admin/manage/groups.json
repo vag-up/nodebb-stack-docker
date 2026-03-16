@@ -8,7 +8,7 @@
     "name": "グループ名",
     "badge": "バッジ",
     "properties": "プロパティ",
-    "description": "説明",
+    "description": "グループの説明",
     "member-count": "メンバー数",
     "system": "システム",
     "hidden": "非表示",

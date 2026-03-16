@@ -1,10 +1,6 @@
 {
-    "cache": "キャッシュ",
-    "post-cache": "投稿キャッシュ",
-    "group-cache": "グループキャッシュ",
-    "local-cache": "ローカルキャッシュ",
-    "object-cache": "オブジェクトキャッシュ",
-    "percent-full": "%1% がフル",
-    "post-cache-size": "投稿キャッシュのサイズ",
-    "items-in-cache": "キャッシュ内のアイテム"
+	"cache": "キャッシュ",
+	"percent-full": "%1% 満杯",
+	"post-cache-size": "投稿キャッシュのサイズ",
+	"items-in-cache": "キャッシュ内のアイテム"
 }

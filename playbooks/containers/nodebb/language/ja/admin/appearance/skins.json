@@ -14,5 +14,5 @@
     "current-skin": "現在のスキン",
     "skin-updated": "スキンがアップデートされました",
     "applied-success": "スキン %1 が正常に適用されました",
-    "revert-success": "NodeBBは正常にデフォルトテーマに戻りました。"
+    "revert-success": "スキンがベースカラーに戻りました"
 }

@@ -1,6 +1,8 @@
 {
     "theme-name": "Harmonyテーマ",
     "skins": "スキン",
+    "light": "ライト",
+    "dark": "ダーク",
     "collapse": "折りたたむ",
     "expand": "展開",
     "sidebar-toggle": "サイドバー切り替え",

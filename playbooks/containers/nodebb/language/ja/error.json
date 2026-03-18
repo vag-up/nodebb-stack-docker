@@ -1,5 +1,6 @@
 {
     "invalid-data": "無効なデータ",
+    "invalid-config-field-value": "設定フィールド \"%1\" の値が無効です: %2",
     "invalid-json": "無効なJSON",
     "wrong-parameter-type": "プロパティ `%1` には型 %3 の値が期待されますが、%2 が渡されました",
     "required-parameters-missing": "このAPI呼び出しに必要なパラメータが不足しています: %1",
@@ -32,6 +33,7 @@
     "invalid-path": "無効なパス",
     "folder-exists": "フォルダが既に存在します",
     "invalid-pagination-value": "無効なページネーション値です。%1 から%2の値でなければありません。",
+    "invalid-unread-cutoff": "未読カットオフ値が無効です。1以上%1以下である必要があります",
     "username-taken": "ユーザー名は既に使われています",
     "email-taken": "このメールアドレスは既に使用されています。",
     "email-nochange": "入力されたメールアドレスは既存のものと同じです。",
@@ -53,7 +55,7 @@
     "reset-same-password": "現在のパスワードとは異なるパスワードを使用してください",
     "user-banned": "ユーザーは停止されています",
     "user-banned-reason": "申し訳ありませんが、このアカウントは停止されています。 (理由: %1)",
-    "user-banned-reason-until": "申し訳ありませんが、このアカウントは％1(理由：％2)まで禁止されています。",
+    "user-banned-reason-until": "申し訳ありませんが、このアカウントは%1(理由：%2)まで禁止されています。",
     "user-too-new": "申し訳ありません。登録後に投稿を行うには%1秒お待ち下さい。",
     "blacklisted-ip": "申し訳ありませんがあなたのIPアドレスは当コミュニティで停止されています。もし誤ったエラーだと思われる場合は管理者にお問い合わせください。",
     "cant-blacklist-self-ip": "自分のIPアドレスをブラックリストに追加することはできません",

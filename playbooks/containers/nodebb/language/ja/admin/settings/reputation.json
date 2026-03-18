@@ -19,7 +19,7 @@
     "downvotes-per-user-per-day": "1ユーザーあたり1日あたりの低評価数（0で無制限）",
     "min-rep-chat": "チャットメッセージを送信するための最低評価",
     "min-rep-post-links": "リンクを投稿するための最低評価",
-    "min-rep-flag": "フラグの投稿に低評価",
+    "min-rep-flag": "投稿にフラグを立てるための最低評価",
     "min-rep-aboutme": "ユーザープロフィールに「私について」を追加するための最低評価",
     "min-rep-signature": "ユーザープロフィールに「署名」を追加するための最低評価",
     "min-rep-profile-picture": "ユーザープロフィールに「プロフィール画像」を追加するための最低評価",
